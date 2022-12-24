@@ -27,8 +27,7 @@ let answerField = document.querySelector("#answer")
 function addCharacter(a)
 {
 	calculation.textContent+=a;
-	if(countCalculations()>1)
-	calculation.textContent=answer+a;
+	if(countCalculations()>1)	calculation.textContent=answer+a;
 }
 function countCalculations()
 {
@@ -48,7 +47,6 @@ function reset()
 	answer=0;
 	answerField.textContent="";
 	calculation.textContent="";
-	
 }
 function deleteNumber(){calculation.textContent=calculation.textContent.slice(0,-1)}
 
@@ -71,7 +69,6 @@ document.querySelector("#dot").addEventListener("click",function(){addCharacter(
 document.querySelector("#reset").addEventListener("click",function(){reset()});
 document.querySelector("#delete").addEventListener("click",function(){deleteNumber()});
 document.querySelector("#equals").addEventListener("click",function(){calculate()});
-
 function calculate()
 {
 	let pattern = new RegExp('(\-*[0-9]+.*[0-9]*)([\-×%÷+])([0-9]+.*[0-9]*)');
@@ -101,8 +98,4 @@ function calculate()
 	}
 	answerField.textContent=Math.round(answer*1000)/1000;
 	answer = Math.round(answer*1000)/1000;
-
 }
-
-
-
