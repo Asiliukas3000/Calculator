@@ -8,7 +8,7 @@ body
 }
 .screen
 {
-	height:100px;
+	height:minmax(150x,200px);
 	text-align:right;
 }
 #answer
@@ -16,6 +16,8 @@ body
 	font-size:27px;
 	padding:5px;
 	margin:5px;
+	inline-size: 190px;
+    overflow-wrap: break-word; 
 }
 #calculation
 {
@@ -24,7 +26,8 @@ body
 	padding:5px;
 	margin:5px;
 	margin-top:30%;
-	overflow:hidden;
+	inline-size: 190px;
+    overflow-wrap: break-word; 
 	width:190px;
 }
 .buttons
@@ -106,7 +109,7 @@ body
 	position:relative;
 	bottom:50%;
 	margin:auto;
-	margin-top:100px;
+	margin-top:30px;
 	margin-bottom:20px;
 	padding:10px;
 }
@@ -114,4 +117,5 @@ h1
 {
 	margin:auto;
 	text-align:center;
+	padding :30px;
 }

@@ -27,6 +27,19 @@ let answerField = document.querySelector("#answer")
 function addCharacter(a)
 {
 	calculation.textContent+=a;
+	if(countCalculations()>1)
+	calculation.textContent=answer+a;
+}
+function countCalculations()
+{
+	let count =0;
+	let symbols = "+%÷×-"
+	let text = calculation.textContent;
+	for(let i = 1 ; i<text.length ;i++)
+	{
+		if(symbols.includes(text[i]))count++;
+	}
+	return count;
 }
 function reset()
 {
@@ -61,9 +74,9 @@ document.querySelector("#equals").addEventListener("click",function(){calculate(
 
 function calculate()
 {
-	let pattern = new RegExp('([0-9]+.*[0-9]*)([\-×%÷+])([0-9]+.*[0-9]*)');
+	let pattern = new RegExp('(\-*[0-9]+.*[0-9]*)([\-×%÷+])([0-9]+.*[0-9]*)');
 	data = calculation.textContent.match(pattern);
-	let answer = ":(";
+	answer = ":(";
 	if(data!=null)
 		switch(data[2])
 		{
@@ -87,6 +100,7 @@ function calculate()
 				break;
 	}
 	answerField.textContent=Math.round(answer*1000)/1000;
+	answer = Math.round(answer*1000)/1000;
 
 }
 
