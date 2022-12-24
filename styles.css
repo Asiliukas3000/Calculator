@@ -24,6 +24,8 @@ body
 	padding:5px;
 	margin:5px;
 	margin-top:30%;
+	overflow:hidden;
+	width:190px;
 }
 .buttons
 {
